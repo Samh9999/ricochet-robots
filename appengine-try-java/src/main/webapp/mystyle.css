@@ -1,0 +1,120 @@
+html {
+  font-family: "Verdana", sans-serif;
+}
+
+body {
+  background-color: #cbebf7;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#wrapper {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+#inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid black;
+  margin-top: 5px;
+}
+
+#playerInputs {
+  margin: 5px;
+}
+
+#submitGuessDiv {
+  margin: 5px;
+}
+
+#board {
+ position: relative;
+ width: 640;
+ height: 640;
+}
+
+#tables {
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  margin-left: 10px;
+}
+
+#playerIdDiv {
+  background-color: #ebedec;
+  border: 1px solid black;
+}
+
+#guessesDiv {
+  background-color: #ebedec;
+  border: 1px solid black;
+}
+
+#canvasBoard {
+ position: absolute;
+ display: block;
+ z-index: 3;
+}
+
+#canvasTime {
+ position: absolute;
+ z-index: 4;
+}
+
+#canvasLine{
+  position: absolute;
+  display: block;
+  z-index: 2;
+}
+
+#boardSvg {
+ position: absolute;
+ display: block;
+ background-color: #ebedec;
+ z-index: 1;
+}
+
+.robot {
+ visibility: hidden;
+ position: absolute;
+ z-index: 99;
+}
+
+#blueRobot {
+ top: 0;
+ left: 0;
+}
+
+#greenRobot {
+ top: 0;
+ right: 0;
+}
+
+#redRobot {
+ top: 600;
+ left: 0;
+}
+
+#yellowRobot {
+ top: 600;
+ right: 0;
+}
+
+#debugDiv {
+  border-style: solid;
+  border-width: 2;
+}
+
+
+table, th, td {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-collapse: collapse;
+}
+
+
