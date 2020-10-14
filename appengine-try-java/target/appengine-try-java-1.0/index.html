@@ -1,0 +1,105 @@
+<html>
+
+<head>
+<link rel="icon" type="image/png" sizes="32x32"
+  href="/favicon-32x32.png">
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<script type="text/javascript"
+  src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="/_ah/channel/jsapi"></script>
+<script type="text/javascript" src="myjavascript.js"></script>
+</head>
+
+<body onload="init()">
+<div id="heading"> 
+  <h1 id="h1">
+    Ricochet Robots
+  </h1>
+  <h4>
+      <a href="https://images.zmangames.com/filer_public/c0/b4/c0b482f1-ad3e-4e5d-ae48-0c11aa7c317a/en-ricochet_robot-rules.pdf"> How to play </a>
+  </h4>
+  <h2>
+    <button id="startButton" onclick="ajaxStartGame()"> Start New Game </button>
+  </h2>
+  <h3 id = "joinGameButtons">
+  </h3>
+</div>
+<div id="wrapper">
+  <div id="board">
+    <canvas id="canvasBoard" width="640" height="640"></canvas>
+    <canvas id="canvasLine" width="640" height="640"></canvas>   
+    <canvas id="canvasTime"></canvas> 
+    <svg id="boardSvg" width="640" height="640"></svg>
+
+    <img class="robot" id="redRobot" width="40" height=40"
+      src="images/red_circle.svg" onclick="justClicked('Red')"> <img
+      class="robot" id="yellowRobot" width="40" height="40"
+      src="images/yellow_circle.png" onclick="justClicked('Yellow')">
+    <img class="robot" id="greenRobot" width="40" height="40"
+      src="images/green_circle.svg" onclick="justClicked('Green')">
+    <img class="robot" id="blueRobot" width="40" height="40"
+      src="images/blue_circle.png" onclick="justClicked('Blue')">
+  </div>
+  <div id="tables">
+  <div id="playerIdDiv">
+    <table id="playerIds">
+      <tr>
+        <th>Players</th>
+      </tr>
+    </table>
+    </div>
+    <div id="guessesDiv">
+      <table id="guesses">
+        <tr>
+          <th>Guesses</th>
+        </tr>
+      </table>
+    </div>
+  </div>
+ </div>
+ <div id="inputs">
+  <div id="playerInputs">
+    Name: 
+    <span id="playerName"></span>
+    <input id="nameBox" type="text">
+    <button id="submitName" onclick="ajaxAddNewPlayer()">Add
+      Player</button>
+  </div>
+  <div id="submitGuessDiv">
+    Guess <input id="guessBox" type="text">
+    <button id="submitGuess" onclick="ajaxSubmitGuess()">Submit</button>
+  </div>
+  <div id="playerToMove"></div>
+  <div id="message"></div>
+  <button onclick="ajaxLeaveGame()">Leave Game</button>
+ </div>
+
+  <br />
+  <hr>
+  <br />
+
+  <div id="debugDiv">
+    <strong>Debugging Controls</strong> <br />
+    <button id="solveGameButton" onclick="ajaxSolveGame(1)">Let
+      computer solve 1 round</button>
+    &nbsp;&nbsp;
+    <button id="solveGameButton" onclick="ajaxSolveGame(16)">Let
+      computer solve 16 rounds</button>
+    &nbsp;&nbsp;
+    <!-- <button onclick="ajaxRestartGame()">Restart Game</button> -->
+    &nbsp;&nbsp; Change target to <select id="targetListBox"
+      onchange="targetSelectedFromListBox()"></select> <br />
+    <button onclick="clearLatestChangesMessages()">Clear Latest
+      Changes Messages</button>
+    Current version:<span id="currentClientVersion"></span> Server
+    version:<span id="highestKnownServerVersion"></span>
+    <div id="latestChangesMessages"></div>
+
+    <div>
+      <br /> <a href="/ricochet/board/walls/get">Walls</a> <br /> <a
+        href="/ricochet/board/targets/get">Targets</a> <br /> <a
+        href="/ricochet/boardstate/get">BoardState</a>
+    </div>
+  </div>
+</body>
+</html>
